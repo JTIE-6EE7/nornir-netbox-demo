@@ -1,4 +1,4 @@
-# nornir-netbox-demo
+# nornir-netbox-demo.py
 
 This script uses Netbox as a Source of Truth for Nornir to automate provisioning, deployment and testing of a demo WAN.
 
