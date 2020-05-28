@@ -1,0 +1,7 @@
+{% for interface, int_cfg in config_vars.interfaces.items() %}
+interface {{ interface }}
+ description {{ int_cfg.description }}
+ ip address {{ int_cfg['ipaddr'] }}
+ {{ "no shutdown" if int_cfg.state=='up' else "shutdown"}}
+{% endfor -%}
+ 

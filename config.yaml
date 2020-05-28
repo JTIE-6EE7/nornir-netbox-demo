@@ -1,0 +1,9 @@
+---
+inventory:
+  plugin: nornir.plugins.inventory.netbox.NBInventory
+  options:
+    nb_url: 'http://172.20.58.202:8000'
+    ssl_verify: False
+    nb_token: '0123456789abcdef0123456789abcdef01234567'
+    username: 'admin'
+    password: 'cisco'
