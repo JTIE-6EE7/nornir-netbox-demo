@@ -2,7 +2,7 @@
 
 This script uses Netbox as a Source of Truth for Nornir to automate provisioning, deployment and testing of a demo WAN.
 
-Devices must be prepopulated in Netbox with a Primary IP address for management.
+Devices must be prepopulated in Netbox with a Primary IP address for management and the JSON provisioning data in the Config Context field.
 
 # Script overview:
 
