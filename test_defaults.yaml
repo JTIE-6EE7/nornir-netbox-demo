@@ -1,0 +1,16 @@
+---
+username: admin
+password: cisco
+platform: ios
+connection_options:
+  netmiko:
+    platform: cisco_ios
+    extras:
+      session_log: logs/netmiko_log.txt
+  napalm:
+    extras:
+      optional_args:
+        session_log: logs/napalm_log.txt
+        global_delay_factor: 3
+        max_loops: 1000
+port: 22
