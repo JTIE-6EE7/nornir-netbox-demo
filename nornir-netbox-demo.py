@@ -259,9 +259,7 @@ def apply_l3_configs(task):
 
 # validate Layer 3 connectivity
 def validate_l3(task):
-    print("sleeping")
-    time.sleep(20)
-    print("awake")
+
     # init failed ping count
     failed_pings = 0
     # iterate over BGP neighbors
