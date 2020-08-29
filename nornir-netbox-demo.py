@@ -66,6 +66,7 @@ Sample Config Context provisioning data for Netbox:
 
 
 import re
+import time
 from netbox import NetBox
 from nornir import InitNornir
 from ipaddress import ip_interface
@@ -258,6 +259,9 @@ def apply_l3_configs(task):
 
 # validate Layer 3 connectivity
 def validate_l3(task):
+    print("sleeping")
+    time.sleep(20)
+    print("awake")
     # init failed ping count
     failed_pings = 0
     # iterate over BGP neighbors
@@ -318,6 +322,7 @@ def apply_bgp_configs(task):
 
 # validate BGP adjacencies
 def validate_bgp(task):
+
     # get bgp status from devices
     bgp = task.run(
         task=napalm_get,
@@ -471,6 +476,7 @@ def main():
 
     # run The Norn to validate Layer 3 connectivity
     c_print("Validating Layer 3 connectivity")
+    time.sleep(20)
     nr.run(task=validate_l3)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
@@ -484,6 +490,7 @@ def main():
 
     # run The Norn to validate BGP adjacencies
     c_print("Validating BGP adjacencies")
+    time.sleep(20)
     nr.run(task=validate_bgp)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
