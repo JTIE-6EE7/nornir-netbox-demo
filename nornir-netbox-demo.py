@@ -130,7 +130,7 @@ def kickoff():
     nb_host = re.sub("^.*//|:.*$", "", nb_url)
 
     # set filter on Netbox role
-    nr = nr.filter(role="router")
+    nr = nr.filter(role="provision-router")
 
     # print error and exit if no hosts found
     if len(nr.inventory.hosts) == 0:
