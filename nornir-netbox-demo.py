@@ -320,7 +320,9 @@ def apply_bgp_configs(task):
 
 # validate BGP adjacencies
 def validate_bgp(task):
-
+    """
+    Nornir task to validate BGP peers have come up
+    """
     # get bgp status from devices
     bgp = task.run(
         task=napalm_get,
