@@ -435,31 +435,18 @@ def update_netbox(task, netbox):
                     c_print(
                         f"*** {task.host}: {ipaddr} exists - verify manually in Netbox ***"
                     )
-    """
-    device_type
-    "device_type": {"id": 2},
-    device_role
-    "device_role": {
-    "id": 0,
-    site
-    "site": {
-    "id": 1,
-
-    {"device_type": {"id": 2}, "device_role": {"id": 3}, "site": {"id": 1}}
-    """
 
     netbox.dcim.update_device(
         device_name=f"{task.host}",
-        data={
-            "device_type": {"id": 2},
-            "device_role": {"id": 1},
-            "site": {"id": 1}
-        }
+        device_type={"id": 2},
+        device_role={"id": 2},
+        site={"id": 1}
     )
 
     c_print(
         f"*** {task.host}: moved from Provisioning to Production ***"
     )
+
 
 # main function
 def main():
@@ -472,11 +459,9 @@ def main():
     proceed()
     print("~" * 80)
 
-    #import ipdb; ipdb.set_trace()
-
     # run The Norn to enable SCP
     c_print("Enabling SCP for NAPALM on all devices")
-    #nr.run(task=scp_enable)
+    nr.run(task=scp_enable)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
@@ -488,35 +473,35 @@ def main():
 
     # run The Norn to render configs
     c_print("Rendering device configurations")
-    #nr.run(task=render_configs)
+    nr.run(task=render_configs)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
     # run The Norn to apply Layer 3 config files with proceed prompt
     c_print("Applying Layer 3 configuration files to all devices")
-    #proceed()
-    #nr.run(task=apply_l3_configs)
+    proceed()
+    nr.run(task=apply_l3_configs)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
     # run The Norn to validate Layer 3 connectivity
     c_print("Validating Layer 3 connectivity")
-    #time.sleep(20)
-    #nr.run(task=validate_l3)
+    time.sleep(20)
+    nr.run(task=validate_l3)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
     # run The Norn to apply BGP configs with proceed prompt
     c_print("Applying BGP routing configuration files to all devices")
-    #proceed()
-    #nr.run(task=apply_bgp_configs)
+    proceed()
+    nr.run(task=apply_bgp_configs)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
     # run The Norn to validate BGP adjacencies
     c_print("Validating BGP adjacencies")
-    #time.sleep(20)
-    #nr.run(task=validate_bgp)
+    time.sleep(20)
+    nr.run(task=validate_bgp)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
@@ -528,7 +513,7 @@ def main():
 
     # run The Norn to disable SCP and save configs
     c_print("Disabling SCP server on all devices")
-    #nr.run(task=scp_disable)
+    nr.run(task=scp_disable)
     c_print(f"Failed hosts: {nr.data.failed_hosts}")
     print("~" * 80)
 
