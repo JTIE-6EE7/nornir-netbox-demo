@@ -35,6 +35,7 @@ JSON provisioning data must be populated in NetBox for each device in the Config
 {
     "bgp": {
         "asn": 65511,
+        "rid": "1.1.1.1",
         "neighbors": [
             {
                 "ipaddr": "172.20.12.2",
@@ -58,8 +59,7 @@ JSON provisioning data must be populated in NetBox for each device in the Config
                 "net": "172.20.13.0",
                 "mask": "255.255.255.0"
             }
-        ],
-        "rid": "1.1.1.1"
+        ]
     },
     "interfaces": {
         "GigabitEthernet1": {
