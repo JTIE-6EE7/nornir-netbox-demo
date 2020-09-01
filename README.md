@@ -45,16 +45,16 @@ Devices must be prepopulated in Netbox with a Primary IP address for management 
         ],
         "networks": [
             {
-                "mask": "255.255.255.255",
                 "net": "1.1.1.1"
+                "mask": "255.255.255.255",
             },
             {
-                "mask": "255.255.255.0",
                 "net": "172.20.12.0"
+                "mask": "255.255.255.0",
             },
             {
-                "mask": "255.255.255.0",
                 "net": "172.20.13.0"
+                "mask": "255.255.255.0",
             }
         ],
         "rid": "1.1.1.1"
