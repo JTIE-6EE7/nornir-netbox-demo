@@ -1,8 +1,8 @@
 # nornir-netbox-demo.py
 
-This script uses Netbox as a Source of Truth for Nornir to automate provisioning, deployment and validation of a demo WAN.
+This script uses Netbox as a Source of Truth for Nornir to automate the provisioning, deployment and validation of a demo WAN.
 
-Devices must be prepopulated in Netbox with a Primary IP address for management and be accessible via SSH.
+Devices must be added to Netbox with a Primary IP address for management and be accessible via SSH.
 
 JSON provisioning data must be populated in NetBox for each device in the Config Context field.
 
