@@ -29,6 +29,7 @@ Devices must be prepopulated in Netbox with a Primary IP address for management 
 
 # Sample Config Context provisioning data for Netbox:
 
+```json
 {
     "bgp": {
         "asn": 65511,
@@ -40,6 +41,20 @@ Devices must be prepopulated in Netbox with a Primary IP address for management 
             {
                 "ipaddr": "172.20.13.3",
                 "remote_asn": 65513
+            }
+        ],
+        "networks": [
+            {
+                "mask": "255.255.255.255",
+                "net": "1.1.1.1"
+            },
+            {
+                "mask": "255.255.255.0",
+                "net": "172.20.12.0"
+            },
+            {
+                "mask": "255.255.255.0",
+                "net": "172.20.13.0"
             }
         ],
         "rid": "1.1.1.1"
@@ -62,3 +77,4 @@ Devices must be prepopulated in Netbox with a Primary IP address for management 
         }
     }
 }
+```
