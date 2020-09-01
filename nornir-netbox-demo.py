@@ -42,6 +42,20 @@ Sample Config Context provisioning data for Netbox:
                 "remote_asn": 65513
             }
         ],
+        "networks": [
+            {
+                "net": "1.1.1.1",
+                "mask": "255.255.255.255"
+            },
+            {
+                "net": "172.20.12.0",
+                "mask": "255.255.255.0"
+            },
+            {
+                "net": "172.20.13.0",
+                "mask": "255.255.255.0"
+            }
+        ],
         "rid": "1.1.1.1"
     },
     "interfaces": {
