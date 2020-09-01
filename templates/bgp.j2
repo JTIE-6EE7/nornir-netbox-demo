@@ -3,3 +3,6 @@ router bgp {{ config_vars.bgp.asn }}
 {% for neighbor in config_vars.bgp.neighbors %}
  neighbor {{ neighbor.ipaddr }} remote-as {{ neighbor.remote_asn }}
 {% endfor %}
+{% for network in config_vars.bgp.networks %}
+ network {{ network.net }} mask {{ network.mask }}
+{% endfor %}
